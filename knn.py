@@ -1,4 +1,5 @@
 import numpy as np
+from data import knn_data
 
 """
 Predict label of feature based on k nearest neighbors
