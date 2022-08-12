@@ -23,7 +23,7 @@ Find k nearest neighbors based on euclidean distance
 """
 
 
-def find_k_nearest_neighbors(training_set, unlabelled_features, k):
+def find_k_nearest_neighbors(training_set: dict, unlabelled_features: list, k: int):
     # list holds euclidean distances between given feature and other examples
     euclid_dist = []
     for student in training_set:

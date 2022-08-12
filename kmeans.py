@@ -4,12 +4,6 @@ from distance_functions import get_manhattan_distance
 from data import kmeans_data
 
 
-class Centroid:
-    def __init__(self, location):
-        self.location = location
-        self.closest_users = set()
-
-
 """
 Calculate the new centroids by taking the average of average fo each cluster. 
 Also check if the new centroids are equal to the old ones and assign boolean value to 'changed'
@@ -30,8 +24,7 @@ Input should be a dict containing the features. Features can be a list of any an
 """
 
 
-def get_k_means(user_feature_map, k):
-    # Don't change the following two lines of code.
+def get_k_means(user_feature_map: dict, k: int):
     random.seed(42)
     # Gets the initial users, to be used as centroids.
     initial_centroid_users = random.sample(sorted(list(user_feature_map.keys())), k)
@@ -66,3 +59,9 @@ centroids = get_k_means(user_feature_map=kmeans_data, k=2)
 
 for cnt, centroid in enumerate(centroids):
     print(f'Centroid {cnt}: {centroid}')
+
+dataset = {'t_0': [-1.479, -1.895, -2.046, -1.710],
+           't_1': [-2.478, -1.950, -2.046, -1.710],
+
+           't_100': [-1.232, -1.844, -1.849, -2.472],
+           }
